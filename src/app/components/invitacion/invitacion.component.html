@@ -1,0 +1,32 @@
+<div
+  class="h-screen flex flex-col items-center justify-center bg-pink-200 text-center p-5"
+>
+  <h1 class="text-3xl md:text-5xl font-bold text-gray-800 mb-6">
+    ¿Arlette Quieres salir conmigo? 😍
+  </h1>
+
+  <div *ngIf="!aceptado">
+    <button
+      class="bg-green-500 text-white px-6 py-3 rounded-lg text-xl font-semibold shadow-lg transition transform hover:scale-105"
+      (click)="aceptar()"
+      (click)="enviarWhatsApp()"
+    >
+      Sí 💖
+    </button>
+
+    <button
+      class="bg-red-500 text-white px-6 py-3 rounded-lg text-xl font-semibold shadow-lg absolute transition-all"
+      [ngStyle]="btnNoStyle"
+      (mouseenter)="moverBoton()"
+    >
+      No ❌
+    </button>
+  </div>
+
+  <div *ngIf="aceptado" class="mt-10 text-center">
+    <p class="text-2xl md:text-4xl font-semibold text-gray-700">
+      ¡Sabía que dirías que sí! 🥰
+    </p>
+    <p class="text-lg text-gray-600 mt-2">Nos vemos pronto 💕</p>
+  </div>
+</div>
